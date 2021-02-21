@@ -1,2 +1,9 @@
+Encrypting a single File:
+---------------------------------------------------------------------------------------
 openssl aes-256-cbc -e -in $FILE -out $FILE.enc -md md5 -pass pass:$KEY 1>/dev/null 2>&1
+
+
+Encrypting a Directory:
+----------------------------------------------------------------------------------------
+ tar -czf - * | openssl enc -e -aes256 -out secured.tar.gz
 
